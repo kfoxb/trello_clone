@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { spacingPx } from "../theme";
 
-type RowItem = {
+type RowItemProps = {
   width?: number;
   rounded?: boolean;
   grow?: boolean;
@@ -11,19 +11,18 @@ type RowItem = {
   backgroundColor?: string;
 }
 
-export const RowItem = styled.div<RowItem>`
-  border-radius: 2px;
-  display: flex;
+export const RowItem = styled.div<RowItemProps>`
   align-items: center;
-  justify-content: ${({ justifyContent = 'center' }) => justifyContent};
   background-color: ${({backgroundColor = 'white'}) => backgroundColor};
+  border-radius: ${({rounded}) => rounded ? '50%' : '2px'};
+  display: flex;
+  flex-grow: ${({ grow }) => grow ? '1' : ''};
+  height: ${spacingPx(3.2)};
+  justify-content: ${({ justifyContent = 'center' }) => justifyContent};
   margin: ${
    ({leftSpacing, rightSpacing}) =>
    `${spacingPx(.4)} ${spacingPx(rightSpacing || .2)} ${spacingPx(.4)} ${spacingPx(leftSpacing || .2)}`
    };
-  height: ${spacingPx(3)};
-  width: ${({ width = 3 }) => spacingPx(width)};
-  border-radius: ${({rounded}) => rounded ? '50%' : ''};
-  flex-grow: ${({ grow }) => grow ? '1' : ''};
-  opacity: 80%;
+  opacity: 100%;
+  width: ${({ width = 3.2 }) => spacingPx(width)};
 `

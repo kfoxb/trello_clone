@@ -40,8 +40,7 @@ export function SiteHeader() {
 
 const Row = styled.div`
   display: flex;
-  background-color: #000;
-  opacity: 30%;
+  background-color: rgba(0, 0, 0, 0.3);
 `
 
 const Search = styled(FSearch)`
