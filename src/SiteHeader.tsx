@@ -29,7 +29,9 @@ export function SiteHeader() {
       <SiteHeaderItem>
         <Bell />
       </SiteHeaderItem>
-      <SiteHeaderItem rightSpacing={.4} rounded><p>KB</p></SiteHeaderItem>
+      <SiteHeaderItem backgroundColor='#db8d69' rightSpacing={.4} rounded>
+        <p>KB</p>
+       </SiteHeaderItem>
     </Row>
   )
 }
@@ -41,12 +43,13 @@ type SiteHeaderItemsProps = {
   leftSpacing?: number;
   rightSpacing?: number;
   justifyContent?: 'center' | 'flex-end'
-  backgroundColor?: '';
+  backgroundColor?: string;
 }
 
 const Row = styled.div`
   display: flex;
-  background-color: #333333;
+  background-color: #000;
+  opacity: 30%;
 `
 
 const SiteHeaderItem = styled.div<SiteHeaderItemsProps>`

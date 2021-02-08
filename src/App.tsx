@@ -29,7 +29,7 @@ const Grid = styled('div')`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 40px 40px 1fr;
-  gap: 0px 0px;
+  gap: 5px 0px;
   grid-template-areas:
     "."
     "."
