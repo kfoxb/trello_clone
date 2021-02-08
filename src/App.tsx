@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import trace from './trello.png'
+import styled from 'styled-components'
+import { SiteHeader } from './SiteHeader'
+import { BoardHeader } from './BoardHeader'
+import { CardContainer } from './CardContainer'
+import { spacing } from './theme'
 
-function App() {
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Trace src={trace} alt="logo" />
+    <Grid>
+      <SiteHeader></SiteHeader>
+      <BoardHeader></BoardHeader>
+      <CardContainer></CardContainer>
+    </Grid>
+    </>
   );
 }
 
-export default App;
+const Trace = styled('img')`
+  width: 100%;
+  position: absolute;
+  opacity: 30%;
+`
+
+const Grid = styled('div')`
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px 40px 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "."
+    "."
+    ".";
+`
