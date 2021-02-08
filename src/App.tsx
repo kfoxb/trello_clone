@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { SiteHeader } from './SiteHeader'
 import { BoardHeader } from './BoardHeader'
 import { CardContainer } from './CardContainer'
-import { spacing } from './theme'
 
 export function App() {
   return (
